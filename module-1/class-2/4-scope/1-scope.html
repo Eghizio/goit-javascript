@@ -1,0 +1,25 @@
+<title>Variables scope</title>
+<script>
+
+const name = "Kuba";
+
+if(true){
+  const someone = "xyz";
+  const name = "Edmund";
+  console.log(name);
+
+  if(true){
+    console.log(name);
+  }
+}
+
+console.log(someone);
+
+if(true){
+  console.log(name);
+}
+
+// minified code:
+// const name="Kuba";{let l="Edmund";console.log(l),console.log(l)}console.log("Kuba");
+
+</script>

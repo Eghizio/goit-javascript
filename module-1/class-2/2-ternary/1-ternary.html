@@ -1,0 +1,23 @@
+<title>Ternary operator</title>
+<script>
+
+// let ageCategory;
+const age = 15;
+
+// if(age >= 18){
+//   ageCategory = "ADULT";
+// } else {
+//   ageCategory = "CHILD";
+// }
+
+// const ageCategory = (age >= 18) ? "ADULT" : "CHILD";
+
+const ageCategory = (age >= 18)
+  ? "ADULT"
+  : (age >= 11)
+  ? "TEENAGER"
+  : "CHILD";
+
+console.log(ageCategory);
+
+</script>

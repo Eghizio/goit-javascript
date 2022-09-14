@@ -1,0 +1,26 @@
+<title>If</title>
+<script>
+
+const isAdmin = true;
+let money = 0;
+const name = "Jakub";
+
+if(name === "Kuba"){
+  console.log("Admin access granted!");
+  money += 100;
+} else if(name === "Maciek"){
+  console.log("Access restricted!");
+  money += 20;
+} else if(name === "Ania"){
+  money += 50;
+} else {
+  console.log("No money for u :(");
+}
+
+console.log("Money: ", money);
+
+if(false)
+  console.log("One statement.");
+  console.log("Second statement");
+
+</script>

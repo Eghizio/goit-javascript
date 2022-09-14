@@ -1,0 +1,18 @@
+<div id="container"></div>
+
+<script>
+
+confirm("The script is paused. Please continue...");
+
+const div = document.querySelector("div#container");
+
+const OVER_9000 = 10000;
+
+for(let i=0; i<OVER_9000; i++){
+  const btn = document.createElement("button");
+  btn.textContent = i;
+
+  div.append(btn);
+}
+
+</script>
