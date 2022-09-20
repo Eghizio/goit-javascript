@@ -1,23 +1,23 @@
 <title>Array methods</title>
 <script>
 
-  // split & join
-  console.log("Method: split() and join()");
-  const text = "abcdefgh";
+  // // split & join
+  // console.log("Method: split() and join()");
+  // const text = "abcdefgh";
 
-  const letters = text.split("");
-  console.log(text);
-  console.log(letters);
+  // const letters = text.split("");
+  // console.log(text);
+  // console.log(letters);
 
 
-  const sentence = "This is a sentence";
+  // const sentence = "This is a sentence";
 
-  const words = sentence.split(" ");
-  console.log(sentence);
-  console.log(words);
+  // const words = sentence.split(" ");
+  // console.log(sentence);
+  // console.log(words);
 
-  const anotherSentence = words.join("-");
-  console.log(anotherSentence);
+  // const anotherSentence = words.join("-");
+  // console.log(anotherSentence);
 
 
 
@@ -65,120 +65,125 @@
 
 
 
-  // // push
-  // console.clear();
-  // console.log("Method: push()");
+  // push
+  console.clear();
+  console.log("Method: push()");
 
-  // const fruits = [];
+  const fruits = [];
 
-  // fruits.push("🍇");
-  // console.log(fruits);
+  fruits.push("🍇");
+  console.log(fruits);
 
-  // fruits.push("🍉");
-  // console.log(fruits);
+  fruits.push("🍉");
+  console.log(fruits);
 
-  // fruits.push("🍌");
-  // fruits.push("🍍");
-  // fruits.push("🍋");
-  // console.log(fruits);
-
-
-
-  // // pop
-  // console.clear();
-  // console.log("Method: pop()");
-
-  // console.log(fruits.pop());
-  // console.log(fruits);
-  // console.log(fruits.pop());
-  // console.log(fruits);
-  // console.log(fruits.pop());
-  // console.log(fruits);
-  // console.log(fruits.pop());
-  // console.log(fruits);
-  // console.log(fruits.pop());
-  // console.log(fruits);
-  // console.log(fruits.pop());
+  fruits.push("🍌");
+  fruits.push("🍍");
+  fruits.push("🍋");
+  console.log(fruits);
 
 
 
-  // // shift
-  // console.clear();
-  // console.log("Method: shift()");
-  // fruits.push("🍇", "🍉", "🍌", "🍍", "🍋");
-  // console.log("Fruits:", fruits);
+  // pop
+  console.clear();
+  console.log("Method: pop()");
 
-  // console.log(fruits.shift());
-  // console.log(fruits);
-  // console.log(fruits.shift());
-  // console.log(fruits);
-  // console.log(fruits.shift());
-  // console.log(fruits);
-  // console.log(fruits.shift());
-  // console.log(fruits);
-  // console.log(fruits.shift());
-  // console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
 
-
-
-  // // unshift
-  // console.clear();
-  // console.log("Method: unshift()");
-  // console.log("Fruits:", fruits);
-
-  // fruits.unshift("🍇");
-  // console.log(fruits);
-  // fruits.unshift("🍉");
-  // console.log(fruits);
-  // fruits.unshift("🍌");
-  // console.log(fruits);
-  // fruits.unshift("🍍");
-  // console.log(fruits);
-  // fruits.unshift("🍋");
-  // console.log(fruits);
+  console.log(fruits.pop());
 
 
 
-  // // slice
-  // console.clear();
-  // console.log("Method: slice()");
-  // console.log("Fruits:", fruits);
+  // shift
+  console.clear();
+  console.log("Method: shift()");
+  fruits.push("🍇", "🍉", "🍌", "🍍", "🍋");
+  console.log("Fruits:", fruits);
 
-  // console.log(fruits.slice());
-  // console.log(fruits.slice(1, 3));
-  // console.log(fruits.slice(2));
-  // console.log(fruits.slice(-1));
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
 
-
-
-  // // splice
-  // console.clear();
-  // console.log("Method: splice()");
-  // console.log("Fruits:", fruits);
-
-  // // Removing elements
-  // const removedFruits = fruits.splice(0, 3);
-  // console.log(removedFruits);
-  // console.log(fruits);
-
-  // // Inserting elements
-  // fruits.splice(2, 0, removedFruits[0]);
-  // console.log(fruits);
-
-  // // Replacing elements
-  // fruits.splice(2, 1, "🍌");
-  // console.log(fruits);
+  console.log(fruits.shift());
 
 
 
-  // // concat
-  // console.clear();
-  // console.log("Method: concat()");
-  // console.log("Fruits:", fruits);
+  // unshift
+  console.clear();
+  console.log("Method: unshift()");
+  console.log("Fruits:", fruits);
 
-  // const veggies = ["🍆", "🥦", "🧅", "🥕", "🥔"];
+  fruits.unshift("🍇");
+  console.log(fruits);
+  fruits.unshift("🍉");
+  console.log(fruits);
+  fruits.unshift("🍌");
+  console.log(fruits);
+  fruits.unshift("🍍");
+  console.log(fruits);
+  fruits.unshift("🍋");
+  console.log(fruits);
 
-  // const food = fruits.concat(veggies);
-  // console.log(food);
+
+
+  // slice
+  console.clear();
+  console.log("Method: slice()");
+  console.log("Fruits:", fruits);
+
+  console.log(fruits.slice());
+  console.log(fruits.slice(1, 3));
+  console.log(fruits.slice(2));
+  console.log(fruits.slice(-1));
+
+
+
+  // splice
+  console.clear();
+  console.log("Method: splice()");
+  console.log("Fruits:", fruits);
+
+  // Removing elements
+  console.log("Removing elements");
+  const removedFruits = fruits.splice(0, 3);
+  console.log(removedFruits);
+  console.log(fruits);
+
+  // Inserting elements
+  console.log("Inserting elements");
+  fruits.splice(2, 0, removedFruits[0]);
+  console.log(fruits);
+
+  // Replacing elements
+  fruits.splice(2, 1, "🍌");
+  console.log(fruits);
+
+
+
+  // concat
+  console.clear();
+  console.log("Method: concat()");
+  console.log("Fruits:", fruits);
+
+  const veggies = ["🍆", "🥦", "🧅", "🥕", "🥔"];
+
+  const food = fruits.concat(veggies);
+  console.log(food);
 
 </script>

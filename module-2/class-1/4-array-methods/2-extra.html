@@ -1,0 +1,20 @@
+<script>
+
+  function calculateEngravingPrice(message, pricePerWord) {
+
+    const words = message.split(" ");
+
+    return words.length * pricePerWord;
+  }
+
+  const tests = [
+    calculateEngravingPrice("JavaScript is in my blood", 10) === 50,
+    calculateEngravingPrice("JavaScript is in my blood", 20) === 100,
+    calculateEngravingPrice("Web-development is creative work", 40) === 160,
+    calculateEngravingPrice("Web-development is creative work", 20) === 80,
+  ];
+
+  console.log(tests);
+
+
+</script>
