@@ -1,0 +1,32 @@
+<title>Array iteration - break & continue</title>
+<script>
+
+  // const premiumUsers = ["John", "Arthur", "Thomas"];
+  // const username = prompt("What is your username?");
+  // let message = `User "${username}" has no premium access. Please upgrade your plan.`;
+
+  // for (const premiumUser of premiumUsers) {
+  //   console.log("Iteration for:", premiumUser);
+
+  //   if (premiumUser === username) {
+  //     message = `User "${username}" has a premium access.`;
+  //     break;
+  //   }
+  // }
+
+  // console.log(message);
+
+
+
+  const sallaries = [6622, 7638, 8641, 17143, 17321, 20581, 21098, 21180, 25958, 26814];
+  const MIN_SALLARY = 15000;
+
+  console.log(`Sallaries above ${MIN_SALLARY}$ :`);
+
+  for (const sallary of sallaries) {
+    if (sallary <= MIN_SALLARY) continue;
+
+    console.log(sallary);
+  }
+
+</script>

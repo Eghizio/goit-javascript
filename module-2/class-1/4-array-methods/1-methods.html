@@ -1,0 +1,189 @@
+<title>Array methods</title>
+<script>
+
+  // // split & join
+  // console.log("Method: split() and join()");
+  // const text = "abcdefgh";
+
+  // const letters = text.split("");
+  // console.log(text);
+  // console.log(letters);
+
+
+  // const sentence = "This is a sentence";
+
+  // const words = sentence.split(" ");
+  // console.log(sentence);
+  // console.log(words);
+
+  // const anotherSentence = words.join("-");
+  // console.log(anotherSentence);
+
+
+
+  // // indexOf
+  // console.clear();
+  // console.log("Method: indexOf()");
+
+  // const users = ["John", "Arthur", "Thomas"];
+  // console.log(users.indexOf("John"));
+  // console.log(users.indexOf("Matthew"));
+
+
+
+  // // includes
+  // console.clear();
+  // console.log("Method: includes()");
+
+  // const names = ["John", "Arthur", "Thomas"];
+  // console.log(names.includes("Thomas"));
+  // console.log(names.includes("Matthew"));
+
+
+  // const fruit = "apple";
+
+  // if (fruit === "apple" || fruit === "strawberry") {
+  //   console.log(`${fruit} is a red fruit!`);
+  // }
+
+  // if (
+  //   fruit === "apple" ||
+  //   fruit === "strawberry" ||
+  //   fruit === "cherry" ||
+  //   fruit === "cranberries"
+  // ) {
+  //   console.log(`${fruit} is a red fruit!`);
+  // }
+
+  // // Better
+  // const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
+  // const cherry = "cherry";
+
+  // const hasRedFruit = redFruits.includes(cherry);
+
+  // if (hasRedFruit) console.log(`${cherry} is a red fruit!`);
+
+
+
+  // push
+  console.clear();
+  console.log("Method: push()");
+
+  const fruits = [];
+
+  fruits.push("🍇");
+  console.log(fruits);
+
+  fruits.push("🍉");
+  console.log(fruits);
+
+  fruits.push("🍌");
+  fruits.push("🍍");
+  fruits.push("🍋");
+  console.log(fruits);
+
+
+
+  // pop
+  console.clear();
+  console.log("Method: pop()");
+
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+  console.log(fruits.pop());
+  console.log(fruits);
+
+  console.log(fruits.pop());
+
+
+
+  // shift
+  console.clear();
+  console.log("Method: shift()");
+  fruits.push("🍇", "🍉", "🍌", "🍍", "🍋");
+  console.log("Fruits:", fruits);
+
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+  console.log(fruits.shift());
+  console.log(fruits);
+
+  console.log(fruits.shift());
+
+
+
+  // unshift
+  console.clear();
+  console.log("Method: unshift()");
+  console.log("Fruits:", fruits);
+
+  fruits.unshift("🍇");
+  console.log(fruits);
+  fruits.unshift("🍉");
+  console.log(fruits);
+  fruits.unshift("🍌");
+  console.log(fruits);
+  fruits.unshift("🍍");
+  console.log(fruits);
+  fruits.unshift("🍋");
+  console.log(fruits);
+
+
+
+  // slice
+  console.clear();
+  console.log("Method: slice()");
+  console.log("Fruits:", fruits);
+
+  console.log(fruits.slice());
+  console.log(fruits.slice(1, 3));
+  console.log(fruits.slice(2));
+  console.log(fruits.slice(-1));
+
+
+
+  // splice
+  console.clear();
+  console.log("Method: splice()");
+  console.log("Fruits:", fruits);
+
+  // Removing elements
+  console.log("Removing elements");
+  const removedFruits = fruits.splice(0, 3);
+  console.log(removedFruits);
+  console.log(fruits);
+
+  // Inserting elements
+  console.log("Inserting elements");
+  fruits.splice(2, 0, removedFruits[0]);
+  console.log(fruits);
+
+  // Replacing elements
+  fruits.splice(2, 1, "🍌");
+  console.log(fruits);
+
+
+
+  // concat
+  console.clear();
+  console.log("Method: concat()");
+  console.log("Fruits:", fruits);
+
+  const veggies = ["🍆", "🥦", "🧅", "🥕", "🥔"];
+
+  const food = fruits.concat(veggies);
+  console.log(food);
+
+</script>
