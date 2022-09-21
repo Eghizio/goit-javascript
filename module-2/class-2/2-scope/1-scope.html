@@ -1,0 +1,36 @@
+<title>Scope and function scope</title>
+<script>
+
+  console.log({ PI });
+
+</script>
+<script>
+
+  // Global scope
+  const PI = 3.1415;
+  const radius = 1;
+
+  function calculateCircleArea(radius) {
+    // Function local scope
+    console.log({ radius });
+
+    if (radius > 0) {
+      // If local scope
+      const x = 42;
+    }
+
+    // console.log({ x });
+
+    return PI * radius * radius;
+  }
+
+
+  console.log(calculateCircleArea(4));
+  console.log(radius)
+
+</script>
+<script>
+
+  console.log({ PI });
+
+</script>
