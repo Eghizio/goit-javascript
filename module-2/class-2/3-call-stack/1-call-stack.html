@@ -1,0 +1,38 @@
+<title>Call stack</title>
+<script>
+
+  // let counter = 0;
+
+  // // Stos wywoływania (wykonywania)
+  // function A() {
+  //   counter++;
+  //   console.log("A");
+  // };
+
+  // function B() {
+  //   counter++;
+  //   console.log("B");
+  //   console.log(counter);
+  //   // C();
+  // };
+
+  // function C() {
+  //   counter++;
+  //   console.log("C");
+  //   A();
+  //   B();
+  // };
+
+  // C();
+
+
+  // Infinite recursion
+  function ouroboros(rounds) {
+    // if (rounds === 0) return;
+    console.log("Hi");
+    ouroboros(rounds - 1);
+  }
+
+  ouroboros(10);
+
+</script>

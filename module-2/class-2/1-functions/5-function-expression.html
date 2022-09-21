@@ -1,0 +1,48 @@
+<title>Function expression</title>
+<script>
+
+  function sum(a, b) {
+    console.log(a + b);
+  }
+
+  const dodawanie = sum;
+
+  const plus = function sum(a, b) {
+    console.log(a + b);
+  };
+
+  const plusik = function (a, b) {
+    console.log(a + b);
+  };
+
+  sum(40, 2);
+  dodawanie(50, 1);
+  plus(10, 2);
+  plusik(2, 3);
+
+  const add = (a, b) => {
+    console.log(a + b);
+  };
+
+  const multiply = (a, b) => a * b;
+  const getObj = (x) => {
+    return { number: x };
+  };
+  const getObject = (x) => ({ number: x });
+
+  console.log(getObj(5));
+  console.log(getObject(7));
+
+  add(1, 2);
+  console.log(multiply(2, 3));
+
+  // IIFE
+  (function () {
+    console.log("Hello world");
+  })();
+
+  (() => {
+    console.log("Hello arrow");
+  })();
+
+</script>

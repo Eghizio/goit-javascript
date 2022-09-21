@@ -1,0 +1,46 @@
+<title>Default arguments</title>
+<script>
+
+  function say(message = "Hello there") {
+    console.log(message);
+  }
+
+  say();
+  say("General kenobi");
+
+
+  function multiply(a, b = 2, c = 3) {
+    console.log({ a, b, c });
+    return a * b * c;
+  }
+
+  console.log(multiply(2));
+  console.log(multiply(2, 3));
+  console.log(multiply(2, 3, 4));
+
+  console.clear();
+
+  function sum(...argArray) {
+    let total = 0;
+
+    // const argArray = Array.from(arguments);
+    // const argArray = [...arguments];
+    console.log(argArray.includes("a"));
+
+    for (const argument of arguments) {
+      if (typeof argument === "number") {
+        total += argument;
+      }
+    }
+
+    return total;
+  }
+
+  console.log(sum(1, 2, 3));
+  console.log(sum(1, 2, 3, 4));
+  console.log(sum(1, 2, 3, 4, 5));
+  console.log(sum());
+  console.log(sum(-5));
+  console.log(sum("a"));
+
+</script>

@@ -1,0 +1,15 @@
+<title>Early return</title>
+<script>
+
+  // Early return
+  function printUserPlan(points) {
+    if (points > 50) return console.log("Premium plan");
+    if (points > 20) return console.log("Standard plan");
+    if (points > 0) return console.log("Basic plan");
+
+    console.log("Free plan");
+  }
+
+  printUserPlan(51);
+
+</script>

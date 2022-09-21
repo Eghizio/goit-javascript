@@ -1,0 +1,33 @@
+<title>Function return</title>
+<script>
+
+  // Returning value
+  function add(a, b) {
+    const sum = a + b;
+
+    return sum;
+  }
+
+  add(40, 2);
+
+  const sum = add(40, 2);
+  console.log(sum);
+  console.log(add(40, 5));
+
+
+  function multiply(a, b, c) {
+    return a * b * c;
+  }
+
+  console.log(multiply(2, 3, 4));
+
+
+  function hello() {
+    console.log("Hello there.");
+  }
+
+  console.log("Before calling hello()");
+  hello();
+  console.log("After calling hello()");
+
+</script>
