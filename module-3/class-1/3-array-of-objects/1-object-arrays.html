@@ -1,0 +1,48 @@
+<title>Object arrays</title>
+<script>
+
+  const books = [
+    {
+      title: "The Last Kingdom",
+      author: "Bernard Cornwell",
+      rating: 8.38,
+    },
+    {
+      title: "Beside Still Waters",
+      author: "Robert Sheckley",
+      rating: 8.51,
+    },
+    {
+      title: "Sen śmiesznego człowieka",
+      author: "Fiodor Dostojewski",
+      rating: 7.75,
+    },
+  ];
+
+  // for (const book of books) {
+  //   console.log(book);
+
+  //   console.log(book.title);
+  //   console.log(book.author);
+  //   console.log(book.rating);
+  // }
+
+  // const bestBooks = books.filter((book) => book.rating > 8);
+  // console.log(bestBooks);
+
+
+  // Getting an average total rating of books
+  let totalRating = 0;
+
+  for (const book of books) {
+    totalRating += book.rating;
+  }
+
+  const averageRating = (totalRating / books.length).toFixed(1);
+  console.log(averageRating);
+
+  // // Using array reduce
+  // const avgRating = (books.reduce((sum, book) => sum + book.rating, 0) / books.length).toFixed(1);
+  // console.log(averageRating);
+
+</script>

@@ -1,0 +1,119 @@
+<title>Object iteration</title>
+<script>
+
+  // For in
+  const book = {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["historical prose", "adventure"],
+    rating: 8.38,
+  };
+
+  for (const key in book) {
+    console.log(key, book[key]);
+  }
+
+
+
+  // hasOwnProperty
+  console.clear();
+
+  const animal = {
+    legs: 4,
+  };
+
+  const dog = Object.create(animal);
+  dog.name = "Pluto";
+
+  console.log(dog);
+  console.log(dog.name);
+  console.log(dog.legs);
+
+  console.log("name" in dog);
+  console.log("legs" in dog);
+
+  console.log(dog.hasOwnProperty("name"));
+  console.log(dog.hasOwnProperty("legs"));
+
+  // To avoid such checking we do not use inheritance in JS most of the times
+  console.clear();
+
+  const lastKingdomBook = {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["historical prose", "adventure"],
+    rating: 8.38,
+  };
+
+  for (const key in lastKingdomBook) {
+    if (lastKingdomBook.hasOwnProperty(key)) {
+      console.log(key);
+      console.log(lastKingdomBook[key]);
+    }
+  }
+
+
+
+  // Object.keys
+  console.clear();
+
+  const product = {
+    name: "MacBook Pro",
+    brand: "Apple",
+    cost: 5000,
+    inStock: true,
+    tags: ["technology", "computer"]
+  };
+
+  const keys = Object.keys(product);
+  console.log(keys);
+
+  for (const key in keys) {
+    console.log(product[key]);
+  }
+
+
+
+  // Object.values()
+  console.clear();
+
+  const values = Object.values(product);
+  console.log(values);
+
+  const cart = {
+    chocolate: 3,
+    lollipop: 4,
+    icecream: 5,
+  };
+
+  let totalSweets = 0;
+
+  for (const amount of Object.values(cart)) {
+    totalSweets += amount;
+  }
+  console.log(totalSweets);
+
+
+
+  // Object.entries()
+  console.clear();
+
+  const entries = Object.entries(product);
+  console.log(entries);
+
+
+  const obj = {
+    user: {
+      nested: {
+        name: "Franek"
+      }
+    },
+    others: {
+      something: null,
+    }
+  };
+
+  const entr = Object.entries(obj) // [["user", {nested...}], ["others", {something..}] ]
+  console.log(entr);
+
+</script>
