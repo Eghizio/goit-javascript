@@ -1,0 +1,120 @@
+<title>Objects</title>
+<script>
+
+  // Defining an object
+  const user = {
+    name: "John Doe",
+    country: "Norway",
+    friends: ["Liz Erd", "Ray Sin"],
+    isPremium: false,
+    age: 42,
+  };
+
+  const json = {
+    "first key": "first value",
+    "second key": null
+  };
+
+
+  console.log(user);
+  console.log(json);
+
+  // Accessing object properties - dot operator
+  console.clear();
+
+  console.log(user.name);
+  console.log(user.age);
+  console.log(user.friends[0]);
+  console.log(user.nonExistingProperty);
+
+
+
+  // Nested objects
+  console.clear();
+
+  const nestedUser = {
+    name: "John Doe",
+    location: {
+      country: "Norway",
+      city: "Oslo",
+      street: "Nested"
+    },
+    age: 42,
+  };
+
+  console.log(nestedUser.location);
+  console.log(nestedUser.location.city);
+
+
+
+  // Computed property
+  console.clear();
+
+  const movie = {
+    "title": "The Last Samurai",
+    "directed by": "Edward Zwick",
+    "music by": "Hans Zimmer",
+    "main role": "Tom Cruise"
+  };
+
+  console.log(movie["music by"]);
+
+  const directorKey = "directed by";
+  console.log(movie[directorKey]);
+
+  const mainActor = movie["main role"];
+  console.log(mainActor);
+
+  const ratingKey = "rating";
+  movie[ratingKey] = 5;
+  console.log(movie);
+
+
+
+  // Assigning value to object property
+  console.clear();
+
+  const product = {
+    name: "MacBook Pro",
+    brand: "Apple",
+    cost: 5000,
+    inStock: true,
+    tags: ["technology", "computer"],
+    nested: {
+      obj: {
+        something: undefined,
+      }
+    }
+  };
+
+  console.log(product);
+
+  product.cost = 4500;
+  product.tags.push("laptop");
+  product.nested.obj.property = 7;
+
+  console.log(product);
+
+  // Adding new properties
+  product.shippingFee = 100;
+
+  console.log(product);
+
+
+
+  // Even shorter
+  console.clear();
+
+  const title = "Bible";
+  const pages = 500;
+  let publisher = "Empik";
+
+  const book = {
+    title,
+    pages,
+    publisher,
+  };
+
+  console.log(book);
+
+</script>

@@ -1,0 +1,57 @@
+<title>Object methods</title>
+<script>
+
+  // Declaring methods
+  const user = {
+    name: "John Doe",
+    sayHi() {
+      console.log("Hi!");
+    }
+  };
+
+  user.sayHi();
+
+  // "this" keyword
+  const movie = {
+    title: "The Last Samurai",
+    printTitle() {
+      console.log(this.title);
+    }
+  };
+
+  movie.printTitle();
+
+  // Using methods
+  console.clear();
+
+  const blogPost = {
+    title: "How to learn JavaScript",
+    date: new Date(),
+    comments: [
+      "Cool post",
+      "Maybe you should write about TypeScript next?"
+    ],
+    getTitle() {
+      return this.title;
+    },
+    addComment(comment) {
+      if (comment.length === 0) {
+        return console.log("Cannot publish an empty comment!");
+      }
+      this.comments.push(comment);
+    }
+  };
+
+  // console.log(blogPost);
+
+  const postName = blogPost.getTitle();
+  console.log(postName);
+
+  console.log(blogPost.comments);
+
+  blogPost.addComment("I'd love some React.js content!");
+  console.log(blogPost.comments);
+
+  blogPost.addComment("");
+
+</script>
