@@ -1,0 +1,41 @@
+<title>Object parameters</title>
+<script>
+
+  function someLongParamsFunc(title, author, publisher, numberOfPages, rating, comments) {
+    console.log("Doing very complex things with given values... not really xD");
+  }
+
+  someLongParamsFunc("Title", "Author", "Publisher", 300, 5, ["First!", "What song?", "Darude Sandstorm!"]);
+
+
+  function someShortParamsFunc(book) {
+    const msg = `Book ${book.title} is written by ${book.author}.`;
+    console.log(msg);
+  }
+
+  someShortParamsFunc({
+    title: "Atomic Habits",
+    author: "James Clear",
+    publisher: "Random House UK Ltd",
+    numberOfPages: 306,
+    rating: 5,
+    comments: ["Woah cool book", "Spam comment", "Even more spam... WTF"]
+  });
+
+
+
+  someShortParamsFunc({
+    title: "Atomic Habits",
+    author: "James Clear",
+  });
+
+
+
+  function evenBetter({ title, author }) {
+    const msg = `Book ${title} is written by ${author}.`;
+    console.log(msg);
+  }
+
+  evenBetter({ title: "Atomic Habits", author: "James Clear" });
+
+</script>
