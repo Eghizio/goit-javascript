@@ -1,0 +1,28 @@
+<title>Destructuring arrays</title>
+<script>
+
+  const rgb = [200, 255, 100];
+  const [red, green, blue, alfa = 0.3] = rgb;
+
+  console.log(`R: ${red}, G: ${green}, B: ${blue}, Alfa: ${alfa}`);
+
+
+
+  // First elements
+  const numbers = [3, 1, 4, 1, 5];
+  const [first, second, ...nums] = numbers;
+
+  console.log(first);
+  console.log(second);
+  console.log(nums);
+
+
+
+  // Last elements
+  const [, , blueColor] = rgb;
+  console.log(blueColor);
+
+  const [, ...digits] = numbers;
+  console.log(digits);
+
+</script>

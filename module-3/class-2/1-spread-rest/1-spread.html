@@ -1,0 +1,110 @@
+<title>Spread operator</title>
+<script>
+
+  // Array spread
+  const numbers = [14, -4, 25, 8, 11];
+
+  console.log("Array: ");
+  console.log(numbers);
+  console.log(Math.max(numbers));
+
+  console.log("Spread: ");
+  console.log(...numbers);
+  console.log(Math.max(...numbers));
+
+
+  // Reference
+  console.log("Different reference: ");
+  const copiedNumbers = [...numbers];
+  console.log(copiedNumbers);
+
+  numbers.push(200);
+  copiedNumbers.push(300);
+
+  console.log(numbers);
+  console.log(copiedNumbers);
+
+
+
+  // Concat arrays
+  console.clear();
+  const first = [1, 2, 3];
+  const second = [4, 5, 6];
+
+  const joined = [...first, ...second];
+  console.log("Joined: ", joined);
+
+  // Order matters
+  console.log([...second, ...first]);
+
+
+
+  // Object spread
+  const user = {
+    name: "John Doe",
+    age: 42,
+  };
+
+  const johnsData = {
+    hobby: ["sport", "technology", "cooking", "gaming", "origami"],
+    subscription: "PRO",
+  };
+
+  const john = { ...user, ...johnsData };
+  console.log(john);
+
+
+
+  // Function arguments spread
+  console.clear();
+
+  function sum(...args) {
+    console.log(args);
+  }
+
+  sum(1, 2);
+  sum(1, 2, 3);
+  sum(1, 2, 3, 4);
+
+  function multiply(a, b, ...rest) {
+    console.log(a);
+    console.log(b);
+    console.log(rest);
+  }
+
+  multiply(1, 2);
+  multiply(1, 2, 3);
+  multiply(1, 2, 3, 4);
+
+
+  console.clear();
+
+  function mapMultiply(a, b, ...rest) {
+    const x = a * b;
+
+    const result = rest.map(function (num) {
+      return num * x;
+    })
+
+    console.log(result);
+  }
+
+  mapMultiply(2, 3, 1, 2, 3, 4, 5, 6);
+
+  // Valid implementation
+  console.clear();
+
+  function add(...args) {
+    let sum = 0;
+
+    for (const num of args) {
+      sum += num;
+    }
+
+    return sum;
+  }
+
+  const result = add(1, 2, 3, 4);
+  console.log(result);
+
+</script>

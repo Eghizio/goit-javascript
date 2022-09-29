@@ -1,0 +1,140 @@
+<title>Destructuring objects</title>
+<script>
+
+  const user = {
+    name: "John Doe",
+    age: 42,
+    isPremium: true,
+    skills: ["fishing", "coding", "cooking", "DYI"],
+  };
+
+  const accountStatus = user.isPremium ? "premium" : "not premium";
+  const message = `User ${user.name} of age ${user.age} is ${accountStatus}.`;
+  console.log(message);
+
+
+
+  const { isPremium, name, age } = user;
+
+  const status = isPremium ? "premium" : "not premium";
+  const msg = `User ${name} of age ${age} is ${status}.`;
+  console.log(msg);
+
+
+
+  // Default values
+  console.clear();
+
+  const movie = {
+    title: "The Last Samurai",
+    director: "Edward Zwick",
+  };
+
+  const {
+    comments = ["Cool shit.", "Great movie!"],
+    title,
+    director
+  } = movie;
+
+  console.log(title);
+  console.log(director);
+  console.log(comments);
+
+
+
+  // Renaming
+  console.clear();
+
+  const {
+    title: movieTitle,
+    category: movieCategory = "action drama",
+  } = movie;
+
+  console.log(movieTitle);
+  console.log(movieCategory);
+
+
+
+  // Loops
+  console.clear();
+
+  const users = [
+    {
+      name: "John Doe",
+      country: "Poland",
+      age: 42,
+    },
+    {
+      name: "Liz Bet",
+      country: "Ireland",
+      age: 36,
+    },
+  ];
+
+  // for (const user of users) {
+  //   console.log(user.name);
+  //   console.log(user.country);
+  //   console.log(user.age);
+  // }
+
+  // for (const user of users) {
+  //   const { name, country, age } = user;
+  //   console.log(name);
+  //   console.log(country);
+  //   console.log(age);
+  // }
+
+  for (const { name, country, age } of users) {
+    console.log(name);
+    console.log(country);
+    console.log(age);
+  }
+
+
+
+  // Nested destructuring
+  console.clear();
+
+  const youtubeUser = {
+    username: "John",
+    accountAge: 4,
+    stats: {
+      subscribers: 9001,
+      views: 132000,
+      likes: 36520
+    }
+  };
+
+  const {
+    username,
+    accountAge,
+    stats: {
+      subscribers,
+      views: youtubeViews,
+      likes: youtubeLikes = 0
+    }
+  } = youtubeUser;
+
+  const yt = `${username} has ${subscribers} subscribers with total views of ${youtubeViews} resulting in ${youtubeLikes} likes.`;
+  console.log(yt);
+
+
+
+  // Filtering (omitting) object property
+  console.clear();
+
+  const product = {
+    name: "Cocoa",
+    weight: 300,
+    price: 5,
+  };
+
+  const { price, ...cocoa } = product;
+
+  console.log(cocoa);
+
+  // // Bad practice
+  // delete cocoa.weight
+  // console.log(cocoa)
+
+</script>
