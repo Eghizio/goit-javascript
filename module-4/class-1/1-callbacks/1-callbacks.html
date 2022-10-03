@@ -1,0 +1,79 @@
+<title>Callback functions</title>
+<script>
+
+  function sayHello(name) {
+    return `Hello there! ${name}`;
+  }
+
+  console.log(sayHello("General Kenobi"));
+
+  console.log(sayHello);
+
+
+
+  // Callback
+  function registerUser(username, callback) {
+    console.log(`User '${username}' registered!`);
+
+    const callbackReturnValue = callback(username);
+    console.log(callbackReturnValue);
+  }
+
+  registerUser("General Kenobi", sayHello);
+
+
+
+  // Inline callback
+  console.clear();
+
+  registerUser("General Kenobi", function (text) {
+    console.log(`PRINTING RECEIPT FOR: ${text}`);
+  });
+
+  registerUser("Maciek", function createEmail(username) {
+    const email = `${username.toLowerCase()}@company.com`;
+    console.log(`Email for ${username} created: ${email}`);
+  });
+
+
+
+  // Multiple callbacks
+  console.clear();
+
+  function sendFriendRequest(username, onAccept, onReject) {
+    console.log(`📧 Sending a friend request to ${username}...`);
+
+    const isAccepted = Math.random() > 0.5; // Simulate accept/reject
+
+    if (isAccepted) {
+      onAccept(username);
+    } else {
+      onReject(username);
+    }
+  }
+
+
+  function sendWelcomeMessage(username) {
+    console.log(`Hello ${username}, I'm glad we are friends ❤️❤️❤️`);
+  }
+
+  function spamWithAnotherRequest(username) {
+    console.log(`${username}, HOW DARE YOU NOT ACCEPT MY FRIENDSHIP !!!1one!! 💔💀`);
+    // Send another request untill accepted :)
+  }
+
+  function handleAccidentalInvite(username) {
+    console.log(`Sorry ${username}, my bot has sent this invite by accident.`);
+  }
+
+
+  sendFriendRequest("Adam Małysz", sendWelcomeMessage, spamWithAnotherRequest);
+
+  sendFriendRequest("Mariusz Pudzianowski", handleAccidentalInvite, handleAccidentalInvite);
+
+  // Send function doesn't care about what are the callbacks doing.
+  // We've created an abstraction that needs only to match the shape of expected arguments.
+  // We usually call such agreement an INTERFACE
+  // Although we can even skip the arguments in the callback function and pass whatever unless it crashes the program
+
+</script>
