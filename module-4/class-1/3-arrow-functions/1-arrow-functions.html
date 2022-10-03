@@ -1,0 +1,101 @@
+<title>Arrow functions</title>
+<script>
+
+  // // Old classy function
+  // function oldschoolAdd(...numbers) {
+  //   let sum = 0;
+  //   for (const num of numbers) sum += num;
+  //   return sum;
+  // };
+
+  // // Fancy cool arrow function
+  // const add = (...numbers) => {
+  //   let sum = 0;
+  //   for (const num of numbers) sum += num;
+  //   return sum;
+  // };
+
+  // const result = oldschoolAdd(1, 2, 3, 4, 5);
+  // console.log(result);
+
+  // const sum = add(1, 2, 3, 4, 5);
+  // console.log(sum);
+
+
+
+  // Implicit return and skipping () for single argument #wow so fresh
+  const addFive = x => x + 5
+
+  console.log(addFive(2));
+
+  const multiply = (a, b, c) => a * b * c;
+
+  console.log(multiply(1, 2, 3));
+
+
+  const mult = (...args) => {
+    let result = 1;
+    for (const num of args) result *= num;
+    return result;
+  }
+
+  const fancyMult = (...args) => args.reduce((total, num) => total * num, 1);
+
+  console.log(mult(1, 2, 3, 4, 5, 6));
+  console.log(fancyMult(1, 2, 3, 4, 5, 6));
+
+
+
+  // Arrow function as a callback
+  console.clear();
+
+  const numbers = [1, 2, 3, 4, 5];
+
+  const addFiveAndPrint = (x) => console.log(x + 5);
+
+  numbers.forEach(addFiveAndPrint);
+  numbers.forEach((num) => console.log(num + 5));
+
+
+
+  // "this" in arrow functions
+  console.clear();
+
+  const user = {
+    name: "Adam",
+    greet: function () {
+      console.log(this);
+    },
+    friend: {
+      name: "Maciek",
+      whatIsThis: function () {
+        console.log(this);
+      },
+      greet: () => console.log(this)
+    }
+  };
+
+  user.greet();
+
+  user.friend.whatIsThis();
+  user.friend.greet();
+
+
+
+  // Curring and partial application
+  console.clear();
+
+  const dodaj = (a) => (b) => (c) => a + b + c;
+
+  // Returns another function, with saved value
+  const dodaj5 = dodaj(5);
+  // and another one
+  const dodaj5oraz2 = dodaj5(2);
+
+  console.log(dodaj5oraz2(10));
+
+  // Same result without assigning each function to a variable
+  const suma = dodaj(5)(2)(10);
+  console.log(suma);
+
+</script>

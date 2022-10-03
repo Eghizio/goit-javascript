@@ -1,0 +1,52 @@
+<title>For Each method</title>
+<script>
+
+  // forEach method
+  const digits = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3];
+
+  digits.forEach(function (item, index, array) {
+    const progress = (index + 1) / array.length * 100;
+
+    console.log(`Progress: ${progress}% \nIndex: [${index}] = ${item}`);
+  });
+
+
+  digits.forEach(function multiplyByTwo(num) {
+    const result = num * 2;
+
+    console.log(result);
+
+    return result;
+  });
+
+
+
+  // Callback function as argument
+  console.clear();
+
+  function multiplyByTwo(item) {
+    const result = item * 2;
+
+    return result;
+  }
+
+  digits.forEach(multiplyByTwo);
+
+  console.log(digits);
+
+
+
+  // Return in forEach
+  console.clear();
+
+  digits.forEach(function (num, i, arr) {
+    const isOdd = num % 2 !== 0;
+
+    if (isOdd) return; // only ends function for current item
+
+    console.log(`Number (${num}) is even!`);
+  });
+
+  console.log(digits);
+
+</script>
