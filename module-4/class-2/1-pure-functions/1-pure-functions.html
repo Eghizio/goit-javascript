@@ -1,0 +1,46 @@
+<title>Pure functions</title>
+<script>
+
+  // This function is mutating the existing array 
+  // (it changes it by directly modyfing it/working on it)
+  const mutatingMultiply = (numbers, factor) => {
+    for (let i in numbers) {
+      const num = numbers[i];
+      numbers[i] = num * factor;
+    }
+
+    return numbers;
+  }
+
+  const digits = [1, 2, 3, 4, 5];
+
+  const a = mutatingMultiply(digits, 2);
+  const b = mutatingMultiply(digits, 3);
+
+  console.log(digits);
+  console.log(a);
+  console.log(b);
+
+
+  // This function is pure, creating and working on new array. 
+  // Does not modify an already existing array
+  console.clear();
+
+  const pureMultiply = (numbers, factor) => {
+    const multipled = [];
+
+    numbers.forEach(num => {
+      multipled.push(num * factor);
+    });
+
+    return multipled;
+  };
+
+  const digitsDoubled = pureMultiply(digits, 2);
+  const digitsTripled = pureMultiply(digits, 3);
+
+  console.log(digits);
+  console.log(digitsDoubled);
+  console.log(digitsTripled);
+
+</script>
