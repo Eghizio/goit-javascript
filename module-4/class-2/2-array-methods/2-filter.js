@@ -8,13 +8,19 @@ console.log(passingGrades);
 
 
 // Filtering unique values
+console.clear();
+
 const letters = ["A", "B", "A", "C"];
 
-const uniqueLetters = letters.filter((letter, i, arr) => arr.indexOf(letter) === i);
+const uniqueLetters = letters.filter(
+  (letter, i, arr) => arr.indexOf(letter) === i
+);
 console.log(uniqueLetters);
 
 
 // Filtering object arrays
+console.clear();
+
 const goitStudents = [
   { name: "A", grade: 14 },
   { name: "B", grade: 17 },

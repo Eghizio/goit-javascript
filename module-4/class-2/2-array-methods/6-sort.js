@@ -14,16 +14,20 @@ const courseStudents = [
 const ages = courseStudents.map(student => student.age);
 console.log("Before sorting: ", ages);
 
-ages.sort();
-console.log("After sorting: ", ages);
+// ages.sort();
 
 
 // pure sorting - won't mutate the original array
 const sortedAges = [...ages].sort();
 
+console.log("After sorting: ", ages);
+console.log(sortedAges);
+
 
 
 // Compare function
+console.clear();
+
 const sortedNumbers = [5, 4, 6, 2, 1, 3, 7].sort((a, b) => a - b);
 console.log("Numbers: ", sortedNumbers);
 
@@ -38,6 +42,7 @@ console.log("Descending: ", descending);
 
 
 
+
 // Object sorting
 const byAgeAscending = (a, b) => a.age < b.age ? -1 : 1;
 const studentsSortedByAge = [...courseStudents].sort(byAgeAscending);
@@ -49,3 +54,4 @@ console.log("Students descending by name: ", studentsSortedByName);
 
 
 console.log("a < b", "a" < "b");
+console.log("a < A", "a" < "A");

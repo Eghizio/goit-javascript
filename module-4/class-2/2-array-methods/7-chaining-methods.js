@@ -27,6 +27,8 @@ console.log(uniqueCoursesAlphabetically);
 
 
 // Let's have some fun ;)
+console.clear();
+
 const filterUnique = (letter, i, arr) => arr.indexOf(letter) === i;
 const sortAlphabetically = (a, b) => a < b ? -1 : 1
 
@@ -51,3 +53,42 @@ console.log(uniqueChars);
 
 console.log(uniqueLetters.join(""), uniqueChars.join(""));
 console.log(uniqueLetters.join("").toLowerCase() === uniqueChars.join(""));
+
+
+
+const allChars = students.reduce((chars, { name, courses }) => {
+  const letters = [name, ...courses].join("").toLowerCase().split("");
+  return [...chars, ...letters];
+}, []);
+
+console.log("All chars: ", allChars);
+
+const lettersCensus = allChars.reduce((census, letter) => {
+  const value = census[letter] ?? 0;
+
+  census[letter] = value + 1;
+
+  return census;
+}, {});
+
+// or
+const census = allChars.reduce((census, letter) => ({ ...census, [letter]: (census[letter] ?? 0) + 1 }), {});
+// or
+const c = allChars.reduce((acc, el) => ({ ...acc, [el]: acc[el] + 1 || 1 }), {});
+
+console.log("1 Census", lettersCensus);
+console.log("2 Census", census);
+console.log("3 Census", c);
+
+
+const howManyUniqueLetters = Object.keys(lettersCensus).length;
+const howManyLettersTotal = Object.values(lettersCensus).reduce((sum, num) => sum + num, 0);
+
+console.log({ howManyUniqueLetters, howManyLettersTotal });
+
+
+// reduce as map
+const x = [1, 2, 3, 4, 5];
+
+const doubles = x.reduce((acc, el) => [...acc, el * 2], []);
+console.log(doubles);

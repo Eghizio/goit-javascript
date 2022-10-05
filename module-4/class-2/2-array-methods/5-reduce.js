@@ -30,13 +30,17 @@ console.log("Average age: ", averageAge);
 const studentsAbove25 = courseStudents.reduce((students, currentStudent) => {
   const { age } = currentStudent;
 
-  if (age > 25) return [...students, currentStudent];
+  // if (age > 25) return [...students, currentStudent];
 
-  return students;
+  // return students;
 
-  // even better
-  // return age > 25 ? [...students, currentStudent] : students;
+  // // even better
+  return age > 25 ? [...students, currentStudent] : students;
 }, []); // <- inital students as empty array
 
 
+// const x = courseStudents.reduce((acc, student) => student.age > 25 ? [...acc, student] : acc, []);
+
 console.log("Students above 25: ", studentsAbove25.map(s => s.age));
+console.log("Students above 25: ", studentsAbove25);
+// console.log("Students above 25: ", x);

@@ -6,12 +6,18 @@ const doubled = numbers.map(num => num * 2);
 const multiplyByThree = x => x * 3;
 const tripled = numbers.map(multiplyByThree);
 
-console.log(doubled);
-console.log(tripled);
-console.log(numbers);
+console.log("Numbers", numbers);
+console.log("Doubled", doubled);
+console.log("Tripled", tripled);
+
+const doubleEvens = numbers.map(num => num % 2 ? num : num * 2);
+
+console.log(doubleEvens);
 
 
 // Transforming (mapping) the object array into array of specific values of the objects
+console.clear();
+
 const users = [
   { name: "Adam", age: 42 },
   { name: "Beth", age: 37 },
@@ -33,14 +39,17 @@ const students = [
   { name: "Cathy", courses: ["IT", "PE"], grades: [[5, 5, 5], [6, 6, 6]] },
 ];
 
-const mappedCourses = students.map(student => student.courses);
-const courses = students.flatMap(student => student.courses);
+// const mappedCourses = students.map(student => student.courses);
+// const courses = students.flatMap(student => student.courses);
 
-console.log("Mapped:", mappedCourses);
-console.log("Flat courses:", courses);
+// console.log("Mapped:", mappedCourses);
+// console.log("Flat courses:", courses);
 
 const nestedGrades = students.flatMap(student => student.grades);
 const flattenedGrades = nestedGrades.flat();
 
 console.log("Nested grades:", nestedGrades);
 console.log("Flattened grades", flattenedGrades);
+
+const filteredGrades = flattenedGrades.flatMap(grade => grade > 3 ? grade : []);
+console.log(filteredGrades)
