@@ -1,0 +1,55 @@
+<title>This keyword</title>
+<script>
+
+  const john = {
+    name: "John",
+    hobbies: ["cooking", "eating"],
+    sayHi() {
+      console.log(`[${john.name}]: Hi`);
+    },
+    getHobbies() {
+      return john.hobbies;
+    },
+    addHobby(hobby) {
+      john.hobbies.push(hobby);
+    }
+  };
+
+  john.sayHi();
+  john.addHobby("not washing the dishes");
+  console.log(john.getHobbies());
+
+
+
+  // Making it more generic
+  console.clear();
+
+  const createUser = (name, hobbies) => {
+    const user = {
+      name,
+      hobbies,
+      sayHi() {
+        console.log(`[${this.name}]: Hi`);
+      },
+      getHobbies() {
+        return this.hobbies;
+      },
+      addHobby(hobby) {
+        this.hobbies.push(hobby);
+      }
+    };
+
+    return user;
+  };
+
+  // "this" is bound to each of this object
+  const adam = createUser("Adam", ["One", "Two", "Three"]);
+  const beth = createUser("Beth", ["A", "B", "C"]);
+
+  adam.sayHi();
+  console.log(adam.getHobbies());
+
+  beth.sayHi();
+  console.log(beth.getHobbies());
+
+</script>
