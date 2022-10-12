@@ -1,0 +1,106 @@
+<title>Object Oriented Programming - OOP</title>
+<!-- <script src="./interfaces.js"></script> -->
+<script>
+
+  // Procedural approach
+
+  // utility functions
+  const avg = (nums) => nums.reduce((s, n) => s + n, 0) / nums.length;
+  const toFixedDecimals = (num) => parseFloat(num.toFixed(2));
+
+  // business logic
+  const getRating = (averageGrade, testScore, presence) => {
+    const score = averageGrade + (testScore * 10) + (presence * 4);
+    const normalized = score / 20;
+    return toFixedDecimals(normalized);
+  };
+
+  // data
+  const grades = [4, 5, 6, 4, 5, 3, 2, 5, 4];
+  const testScore = 0.75;
+  const presence = 0.92;
+
+  // usage
+  const rating = getRating(avg(grades), testScore, presence);
+  console.log("Rating: ", rating);
+
+
+
+  // Object Oriented approach
+  console.clear();
+
+  // data and business logic
+  const student = {
+    grades: [4, 5, 6, 4, 5, 3, 2, 5, 4],
+    testScore: 0.75,
+    presence: 0.92,
+    getRating() {
+      const score = avg(this.grades) + (this.testScore * 10) + (this.presence * 4);
+      const normalized = score / 20;
+      return toFixedDecimals(normalized);
+    }
+  };
+
+  // usage bound to context
+  console.log("Student: ", student.getRating());
+
+  // duplication
+  const anotherStudent = {
+    grades: [2, 4, 3, 5, 6, 1, 4, 3, 3],
+    testScore: 0.56,
+    presence: 0.69,
+    getRating() {
+      const score = avg(this.grades) + (this.testScore * 10) + (this.presence * 4);
+      const normalized = score / 20;
+      return toFixedDecimals(normalized);
+    }
+  };
+
+  console.log("Another student: ", anotherStudent.getRating());
+
+
+
+  // Class foreshadowing
+  console.clear();
+
+  const createNewStudent = (grades, testScore, presence) => ({
+    grades,
+    testScore,
+    presence,
+    getRating() {
+      const score = avg(this.grades) + (this.testScore * 10) + (this.presence * 4);
+      const normalized = score / 20;
+      return toFixedDecimals(normalized);
+    }
+  });
+
+  // ease of use, we configure new objects
+  const adam = createNewStudent([4, 5, 6, 3, 4, 5, 5, 4], 0.72, 0.85);
+  const beth = createNewStudent([5, 2, 3, 5, 3, 6, 3, 1], 0.66, 0.77);
+
+  console.log("Adam: ", adam.getRating());
+  console.log("Beth: ", beth.getRating());
+
+
+
+  // Interface as a contract
+  const calculateStudentsAverageRating = (students) => toFixedDecimals(
+    avg(
+      students.map(
+        // we expect "student" to have "getRating" method
+        // if the "student" object won't have it, we have an error
+        student => student.getRating()
+      )
+    )
+  );
+
+  const fakeStudent = {};
+
+  // Let's see...
+  // const studentGroup = [student, anotherStudent, adam, fakeStudent, null, beth];
+  const studentGroup = [student, anotherStudent, adam, beth];
+
+  const avgGroupRating = calculateStudentsAverageRating(studentGroup);
+  console.log("Average group rating: ", avgGroupRating);
+
+</script>

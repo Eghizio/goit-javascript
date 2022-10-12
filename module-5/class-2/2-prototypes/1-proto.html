@@ -1,0 +1,50 @@
+<title>Prototypal inheritance</title>
+<script>
+
+  // Animal as prototype for dog object
+  const animal = {
+    legs: 4,
+  };
+
+  const dog = Object.create(animal);
+  dog.name = "Pluto";
+
+  console.log(dog);
+  console.log("Is prototype of animal? ", animal.isPrototypeOf(dog));
+  console.log(dog.legs);
+
+
+
+  // __proto__ and own properties
+  console.log(dog.__proto__);
+  console.log(animal);
+
+  console.log(dog.hasOwnProperty("name"), dog.name);
+  console.log(dog.hasOwnProperty("legs"), dog.legs);
+
+
+
+  // Own properties iteration
+  console.clear();
+
+  console.log("Properties of dog:");
+  for (const key in dog) {
+    console.log(key);
+  }
+
+
+  console.log("Own properties of dog:");
+  for (const key in dog) {
+    if (dog.hasOwnProperty(key)) {
+      console.log(key);
+    }
+  }
+
+
+  // or
+  console.log("Own properties of dog using Object.keys():");
+  for (const key of Object.keys(dog)) {
+    console.log(key);
+  }
+
+</script>
