@@ -1,11 +1,16 @@
-const createCatImage = () => {
+const dogImgSrc = "./images/dog.webp";
+const catImgSrc = "./images/cat.jpg";
+
+const createImage = () => {
   const img = document.createElement("img");
   // console.log(img);
 
-  const catImgSrc = "https://i.ytimg.com/vi/SQJrYw1QvSQ/maxresdefault.jpg";
+  // const src = Math.random() > 0.5 ? dogImgSrc : catImgSrc;
 
-  img.setAttribute("src", catImgSrc);
-  img.alt = "Cute cat with a spade";
+  const [src, alt] = Math.random() > 0.5 ? [dogImgSrc, "Cute dog in a costume"] : [catImgSrc, "Cute cat with a spade"];
+
+  img.setAttribute("src", src);
+  img.alt = alt;
   img.setAttribute("width", 300);
 
   img.addEventListener("click", (event) => {
@@ -17,7 +22,7 @@ const createCatImage = () => {
 
 
 
-const img = createCatImage();
+const img = createImage();
 
 // document.body.after(img);
 document.body.appendChild(img);
@@ -26,8 +31,8 @@ document.body.appendChild(img);
 
 const fragment = new DocumentFragment();
 
-const cats = Array.from({ length: 1000 }, () => createCatImage());
-// cats.forEach(img => document.body.append(img));
+const pets = Array.from({ length: 1000 }, createImage);
+// pets.forEach(img => document.body.append(img));
 
-fragment.append(...cats);
+fragment.append(...pets);
 document.body.appendChild(fragment);
