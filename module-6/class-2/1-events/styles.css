@@ -1,0 +1,43 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.msg-form {
+  padding: 1em;
+  border-radius: 10px;
+  background-color: dodgerblue;
+}
+
+.msg-target {
+  color: red;
+}
+
+.preview {
+  padding: 1em;
+  font-size: 24px;
+  background-color: lightskyblue;
+}
+
+.typing {
+  display: block;
+  padding: 1em 0;
+  font-size: smaller;
+}
+
+
+.dice {
+  padding: 1em;
+  border: 5px solid purple;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.dice-result {
+  font-size: 48px;
+}
+
+.dice>button {
+  padding: 1em 2em;
+}

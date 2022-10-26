@@ -1,0 +1,49 @@
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- <script src="./1-listeners.js" defer></script> -->
+  <!-- <script src="./2-event.js" defer></script> -->
+  <!-- <script src="./3-keyboard.js" defer></script> -->
+  <script src="./4-form.js" defer></script>
+  <script src="./dice.js" defer></script>
+</head>
+
+<body>
+  <main class="column">
+
+
+    <button>Pointless Button</button>
+
+    <label>Notatki:
+      <input id="notes" type="text">
+    </label>
+
+    <form class="msg-form">
+      <div>
+        Message to:
+        <span id="message-target" class="msg-target"></span>
+      </div>
+      <input type="text" placeholder="Message">
+      <select>
+        <option value="">Select friend</option>
+        <option value="Adam Badam">Adam</option>
+        <option value="Beth Meth">Beth</option>
+        <option value="Cecil Imbecil">Cecil</option>
+      </select>
+      <button>Send message!</button>
+
+      <span id="typing" class="typing"></span>
+    </form>
+
+    <div>
+      <h4>Preview:</h4>
+      <div id="preview" class="preview"></div>
+    </div>
+
+
+    <div class="dice column">
+      <span class="dice-result">?</span>
+      <button>Roll the dice!</button>
+    </div>
+  </main>
+</body>
