@@ -104,5 +104,5 @@ const spinPinwheel = (pinwheel, incrementDegree = 1) => () => {
 // document.addEventListener("scroll", spinPinwheel(pinwheelFirst));
 // document.addEventListener("scroll", customThrottling(spinPinwheel(pinwheelSecond), 42));
 
-document.addEventListener("mousemove", spinPinwheel(pinwheelFirst, 12));
-document.addEventListener("mousemove", customThrottling(spinPinwheel(pinwheelSecond), 42));
+document.addEventListener("mousemove", spinPinwheel(pinwheelFirst, 10));
+document.addEventListener("mousemove", customThrottling(spinPinwheel(pinwheelSecond, -10), 42));
