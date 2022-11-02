@@ -1,0 +1,40 @@
+<head>
+  <title>Throttle Debounce</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="scrolls">
+    <div>
+      Scrolls: <span id="scrolls">0</span>
+    </div>
+
+    <div>
+      Throttled Scrolls: <span id="throttled-scrolls">0</span>
+    </div>
+
+    <div>
+      Debounced Scrolls: <span id="debounced-scrolls">0</span>
+    </div>
+
+    <div>
+      Trailing Debounced Scrolls: <span id="trailing-debounced-scrolls">0</span>
+    </div>
+    <div>
+      Leading Debounced Scrolls: <span id="leading-debounced-scrolls">0</span>
+    </div>
+
+    <div>
+      Custom Throttled Scrolls: <span id="custom-throttled-scrolls">0</span>
+    </div>
+
+    <div class="pinwheel">+</div>
+    <div class="pinwheel">+</div>
+  </div>
+
+</body>
