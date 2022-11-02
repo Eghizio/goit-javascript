@@ -1,0 +1,49 @@
+<head>
+  <title>Lazy Loading Images</title>
+  <style>
+    .tall-content {
+      height: 500vh;
+      background-color: palevioletred;
+      padding: 1rem;
+    }
+
+    .blur-up {
+      filter: blur(5px);
+      transition: filter 400ms;
+    }
+
+    .blur-up.lazyloaded {
+      filter: blur(0);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+    integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="tall-content">
+    <h1>Some long content here ...</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus accusamus aut culpa natus nam in saepe
+      cumque quisquam aperiam ex nostrum rem accusantium sunt esse tempore, minus eius expedita quod?
+      Necessitatibus odit nostrum laudantium ex consequatur quisquam autem amet esse, nihil aliquam expedita. Dolore
+      modi nobis debitis perferendis cum doloribus nihil totam aperiam autem! Assumenda doloribus maiores placeat minus
+      blanditiis?
+      Reiciendis, nesciunt tempore, officiis voluptatibus sit architecto hic commodi fuga similique molestias delectus
+      autem voluptates nostrum? Earum animi vitae necessitatibus neque, dolorem officia deserunt, praesentium ea quod
+      corporis eum veniam!
+      Nesciunt, ratione velit? Provident sequi fuga veniam laudantium amet voluptas maxime perferendis alias
+      dignissimos, dolorum quo non nihil aperiam ad! Corporis, autem? Officia, sequi doloremque velit eligendi illo
+      consequatur eius.
+      Libero cum itaque, fugiat voluptatem consequuntur possimus autem officia, est quo, consequatur odio labore nihil
+      unde? Libero, iste nihil fuga nemo maiores corrupti officia odio, enim doloribus earum vel fugit?
+    </p>
+  </div>
+
+  <img class="lazyload blur-up" data-src="https://thebookshop.pl/upload/thebookshop/categories/IMG_4204.JPG"
+    alt="Giant Peppa pig">
+  <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_kitty_character_portrait.png" alt="Hello Kitty"
+    loading="eager">
+  <!-- <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_kitty_character_portrait.png" alt="Hello Kitty" loading="lazy"> -->
+</body>
