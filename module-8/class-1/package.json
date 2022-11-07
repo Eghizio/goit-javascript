@@ -1,0 +1,22 @@
+{
+  "name": "class-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "message.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "watch": "nodemon src/app.js",
+    "app:build": "echo \"Building my app... Please wait....\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
