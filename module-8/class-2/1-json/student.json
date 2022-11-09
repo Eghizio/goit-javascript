@@ -1,0 +1,44 @@
+{
+  "students": [
+    {
+      "id": "xyz",
+      "name": "John Doe",
+      "age": 20,
+      "year": 2,
+      "grades": [
+        5,
+        4,
+        3,
+        4,
+        5,
+        3
+      ],
+      "isSober": true,
+      "address": {
+        "country": "Poland",
+        "city": "Sopot"
+      },
+      "degree": null
+    },
+    {
+      "id": "abc",
+      "name": "Johnny Doe",
+      "age": 20,
+      "year": 2,
+      "grades": [
+        5,
+        4,
+        3,
+        4,
+        5,
+        3
+      ],
+      "isSober": true,
+      "address": {
+        "country": "Poland",
+        "city": "Sopot"
+      },
+      "degree": null
+    }
+  ]
+}
