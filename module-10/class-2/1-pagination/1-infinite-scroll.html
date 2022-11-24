@@ -1,0 +1,26 @@
+<head>
+  <title>Infinite Scroll</title>
+  <script src="./3-infinite-scroll.js" defer></script>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+    }
+
+    .photo {
+      width: 200px;
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="grid" id="photos"></main>
+  <div class="loader" id="load-more">Loading...</div>
+</body>
